@@ -1,0 +1,70 @@
+@media print{
+	img,
+	header,
+	footer,
+	form,
+	figure,
+	aside,
+	iframe,
+	.sidepanel,
+	.back-to-top,
+	.wpcf7,
+	.fa,
+	.cm.sh{
+		display: none !important;
+	}
+
+	/* This Removes the URL of anchor tag but retain the text */
+	a{
+		pointer-events: none !important;
+	}
+	a[href]:after {
+		content: none !important;
+	}
+
+	.wrapper-holder{
+		min-height: 10px !important;
+		margin-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	div{
+		height: auto !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		min-height: 10px !important;
+		width: 100% !important;
+	}
+	*{
+		opacity: 1 !important;
+		position: initial !important;
+		text-align: initial !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	h1, h2, h3, h4, h5, h6{
+		margin-top: 10px !important;
+		margin-bottom: 15px !important;
+	}
+	p{
+		& + p{
+			margin-top: 10px !important;
+		}
+		& ~ table{
+			margin-top: 10px !important;
+			margin-bottom: 10px !important;
+		}
+	}
+	table{
+		border-top: 1px solid #ccc !important;
+		border-right: 1px solid #ccc !important;
+		td, th{
+			padding: 5px 10px !important;
+			border-left: 1px solid #ccc !important;
+			border-bottom: 1px solid #ccc !important;
+		}
+		ol, ul{
+			padding-left: 15px !important;
+		}
+	}
+}

@@ -1,0 +1,69 @@
+@mixin gradients($top, $bottom){
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fffffe+0,bbe2f7+100 */
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $top 0%,$bottom 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $top 0%,$bottom 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$bottom',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin borderRadius( $radius ) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+@mixin backgroundDefault( $size: cover, $position: 50% ){
+  background-size: $size;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+
+@mixin bgTransparent( $red, $green, $blue, $opacity ) {
+  background: rgba($red, $green, $blue, $opacity);
+}
+
+@mixin transition( $transition ) {
+  -webkit-transition: all $transition;
+  -ms-transition: all $transition;
+  -o-transition: all $transition;
+  transition: all $transition;
+}
+
+@mixin dgInline( $width:"", $alignment:middle ) {
+  display: inline-block;
+    vertical-align: $alignment;
+    float: none;
+    margin: 0 -2px;
+
+  @if $width != "" {
+      width: $width;
+  } 
+}
+
+@mixin oInline( $alignment: middle ) {
+  display: inline-block;
+  float: none;
+  vertical-align: $alignment; 
+}
+
+@mixin dgFloat($position:left, $width:"") {
+  float: $position;
+  width: $width;
+}
+
+@mixin boxShadow( $left, $top, $spread, $distance, $color, $set:"") {
+
+  @if $set == true {
+    $set: inset;
+  }
+  @else {
+    $set: '';
+  }
+
+  -webkit-box-shadow: $left $top $spread $distance $color $set;
+  -ms-box-shadow: $left $top $spread $distance $color $set;
+  -o-box-shadow: $left $top $spread $distance $color $set;
+  box-shadow: $left $top $spread $distance $color $set;
+}

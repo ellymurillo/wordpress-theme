@@ -1,0 +1,216 @@
+@media screen{
+	// MAIN WRAPPER
+	main, .wrapper-holder{
+		position: relative;
+		z-index: 1;
+	}
+	
+	// FORM CONTROLS / FORM CONTROL PLACEHOLDER
+	.form-control::-webkit-input-placeholder { color: #b5b5b5; }
+	.form-control:-moz-placeholder { color: #b5b5b5; } /* Firefox 18- */
+	.form-control::-moz-placeholder { color: #b5b5b5; } /* Firefox 19+ */
+	.form-control:-ms-input-placeholder { color: #b5b5b5; }
+	.form-control{ border-radius: 0; height: 40px; padding: 10px 20px; }
+  
+	// CONTACT FORM
+  span.wpcf7-not-valid-tip{
+    display: none !important;
+  }
+  div.wpcf7-validation-errors{
+    border-color:#e46967;
+    background-color: #FFCFCF;
+    color:#e46967;
+    margin: 0 0 10px;
+  }
+  .wpcf7-not-valid{
+    border:1px solid #e46967;
+    background-color: #FFCFCF;
+  }
+  .wpcf7-mail-sent-ok{
+    border: 2px solid #3c763d;
+    margin: 0 0 10px;
+    color: #3c763d;
+    background-color: #DFF0D8;
+  }
+
+	// CONTENT EDITOR CONFIGURATION
+  img.alignleft{
+		float: left;
+		margin-right: 20px;
+	}
+	img.aligncenter{
+		display: block;
+		margin: 0 auto 20px;
+	}
+	img.alignright{
+		float: right;
+		margin-left: 20px;
+	}
+
+	// YOAST BREADCRUMBS
+	.breadcrumbs{
+		border-top: 1px solid #e5e5e5;
+		border-bottom: 1px solid #e5e5e5;
+		font-size: 14px;
+		padding: 5px 15px;
+		// color: #ccc;
+		margin-bottom: 0 !important;
+		a{
+			// color: #ccc;
+		}
+		.fa{
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+	}
+
+	// CUSTOM IMG THUMBNAIL
+	.img-thumbnail{
+		padding: 5px;
+		border-radius: 0;
+		border: none;
+		box-shadow: 0 0 2px 1px #ccc;
+	}
+
+	// ACF GOOGLE MAP
+	.acf-map {
+		width: 100%;
+		height: 400px;
+		border: #ccc solid 1px;
+		margin: 20px 0;
+	}
+	/* fixes potential theme css conflict */
+	.acf-map img {
+	  max-width: inherit !important;
+	}
+
+	// PAGE LOADER
+	.loader-overlay {
+    background: rgba(255, 255, 255, 0.98);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    .loader{
+      bottom: 0;
+      left: 30px;
+      position: absolute;
+      right: 30px;
+      top: 0;
+      .loader-img{
+        bottom: 0;
+        color: rgba(0, 0, 0, 0.7);
+        display: block;
+        height: 100%;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        span{
+          display: block;
+          vertical-align: middle;
+        }
+      }
+    }
+	}
+
+	// BACK TO TOP
+	.back-to-top{
+		position: fixed;
+		bottom: 15px;
+		right: 15px;
+		z-index: 9;
+		a{
+			background-color: #ccc;
+			color: #000;
+			padding: 12px 15px;
+			border-radius: 5px;
+		}
+	}
+
+	// VERTICAL ALIGN BUG
+	.cm{
+		@include oInline(middle);
+		width: 99.99%;
+		&.sh{
+			width: 0.01%;
+			height: 100%;
+		}
+	}
+
+	// CAROUSEL FADE
+	.carousel-fade {
+    .carousel-inner {
+      .item {
+        transition-property: opacity;
+      }
+      
+      .item,
+      .active.left,
+      .active.right {
+        opacity: 0;
+      }
+
+      .active,
+      .next.left,
+      .prev.right {
+        opacity: 1;
+      }
+
+      .next,
+      .prev,
+      .active.left,
+      .active.right {
+        left: 0;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    .carousel-control {
+      z-index: 2;
+    }
+	}
+
+	// VERTICAL ALIGNMENT
+	.column-middle{
+		@include oInline(middle);
+		margin: 0 -2px;
+	}
+	.column-top{
+		@include oInline(top);
+		margin: 0 -2px;
+	}
+	.column-bottom{
+		@include oInline(bottom);
+		margin: 0 -2px;
+	}
+
+	// GOOGLE RECAPTCHA
+	.g-recaptcha{
+		margin-top: 0px;
+		height: auto;
+		@media (max-width: 400px){
+			height: 60px;
+			overflow: hidden;
+		}
+		& > div{
+			margin: 0;
+			@media (max-width: 400px){
+				transform:scale(0.77);
+				-webkit-transform:scale(0.77);
+				transform-origin:0 0;
+				-webkit-transform-origin:0 0;
+				margin: 0 auto;
+			}
+		}
+	}
+	span.wpcf7-form-control-wrap .g-recaptcha{
+		margin-top: -15px;
+		margin-bottom: 15px;
+	}
+}
